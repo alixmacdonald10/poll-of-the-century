@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll of the Century</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.12"
+      integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold mb-6">Who's the best?</h1>
+      <div class="flex flex-col space-y-4 items-center justify-center">
+        <div class="flex items-center space-x-4">
+          <button
+            class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-300 transition-colors"
+            hx-post="/inc-alix"
+            hx-swap="none"
+          >
+            Alix obviously
+          </button>
+          <p id="alix-counter" class="font-semibold" hx-get="/alix" hx-trigger="every 0.5s" hx-swap="innerHTML">0</p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-300 transition-colors"
+            hx-post="/inc-other"
+            hx-swap="none"
+          >
+            ...Yehuda
+          </button>
+          <p id="other-counter" class="font-semibold" hx-get="/other" hx-trigger="every 0.5s" hx-swap="innerHTML">0</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
