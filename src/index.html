@@ -13,27 +13,27 @@
   </head>
   <body class="flex justify-center items-center min-h-screen bg-gray-100">
     <div class="text-center">
-      <h1 class="text-3xl font-bold mb-6">Who's the best?</h1>
+      <h1 class="text-3xl font-bold mb-6">What's best?</h1>
       <div class="flex flex-col space-y-4 items-center justify-center">
         <div class="flex items-center space-x-4">
           <button
             class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-300 transition-colors"
-            hx-post="/inc-alix"
+            hx-post="/inc-rust"
             hx-swap="none"
           >
-            Alix obviously
+            Rust obviously
           </button>
-          <p id="alix-counter" class="font-semibold" hx-get="/alix" hx-trigger="every 0.5s" hx-swap="innerHTML">0</p>
+          <p id="rust-counter" class="font-semibold" hx-get="/rust" hx-trigger="every 0.5s" hx-swap="innerHTML">0</p>
         </div>
         <div class="flex items-center space-x-4">
           <button
             class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-300 transition-colors"
-            hx-post="/inc-other"
+            hx-post="/inc-python"
             hx-swap="none"
           >
-            ...Yehuda
+            ...python
           </button>
-          <p id="other-counter" class="font-semibold" hx-get="/other" hx-trigger="every 0.5s" hx-swap="innerHTML">0</p>
+          <p id="python-counter" class="font-semibold" hx-get="/python" hx-trigger="every 0.5s" hx-swap="innerHTML">0</p>
         </div>
       </div>
     </div>

@@ -12,3 +12,11 @@ rand = "0.8.*"
 tokio = { version = "1.37.*", features = ["full"] }
 tracing = "0.1.*"
 tracing-subscriber = "0.3.*"
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"  # Optimize for size.
+lto = true  # instructs linker to optimize at link stage
+codegen-units = 1  # increases compile times but improves opts
+
+
